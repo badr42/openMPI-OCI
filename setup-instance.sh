@@ -1,11 +1,12 @@
 #!/bin/bash
 
-sudo echo "$nrconf{restart} = 'a';" >> /etc/needrestart/needrestart.conf
 
-sudo apt-get update -y
-sudo apt-get upgrade -y
+echo -e  '$nrconf{restart} = 'a';' | sudo tee -a /etc/needrestart/needrestart.conf > /dev/null
 
-sudo echo "$nrconf{restart} = 'a';" >> /etc/needrestart/needrestart.conf
+
+
+sudo apt-get update -yq
+sudo apt-get upgrade -yq
 
 sudo apt-get install net-tools -yq
 sudo mkdir -p /home/ubuntu/Desktop/sharedfolder

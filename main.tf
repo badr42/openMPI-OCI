@@ -2,11 +2,8 @@
 data "oci_core_images" "images" {
   compartment_id = var.compartment_ocid
   operating_system = "Canonical Ubuntu"
-  filter {
-    name = "display_name"
-    values = ["^Canonical-Ubuntu-22.04-([\\.0-9-]+)$"]
-    regex = true
-  }
+  shape = var.instance_shape
+ 
 }
 
 # Create a compute instance with a public IP address using oci provider
@@ -33,7 +30,7 @@ resource "oci_core_instance" "instance" {
   # Add private key
   metadata = {
     ssh_authorized_keys = file(var.ssh_public_key_path)
-   # user_data           = base64encode(file("setup-instance.sh"))
+    user_data           = base64encode(file("setup-instance.sh"))
   }
   shape_config {
         #Optional
