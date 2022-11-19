@@ -17,7 +17,7 @@ resource "oci_core_instance" "instance" {
   
   source_details {
     source_type = "image"
-    source_id   = data.oci_core_images.images.images[0].id
+    source_id   = data.oci_core_images.images.images[var.AD_number].id
     boot_volume_size_in_gbs = 50
   }
 
@@ -34,7 +34,8 @@ resource "oci_core_instance" "instance" {
   }
   shape_config {
         #Optional
-        memory_in_gbs = "16"
+        # memory_in_gbs = "16"
+        memory_in_gbs = var.core_count*2 <16 ? 16 : var.core_count*2
         ocpus = var.core_count
   }
 }

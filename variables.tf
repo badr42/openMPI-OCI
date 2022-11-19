@@ -29,3 +29,10 @@ variable "vcn_cidr" {
 variable "core_count" {
   description = ""
 }
+
+variable "AD_number" {
+  type          = number
+  description   = ""
+  default       = 0
+}
+
