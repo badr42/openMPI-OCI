@@ -35,7 +35,7 @@ resource "oci_core_instance" "instance" {
   shape_config {
         #Optional
         memory_in_gbs = "16"
-        ocpus = "2"
+        ocpus = var.core_count
   }
 }
 
