@@ -20,6 +20,14 @@ sudo make
 sudo make install
 
 
+cd /home/ubuntu/Desktop/sharedfolder
+mkdir testcode
+cd samplecode
+wget https://raw.githubusercontent.com/badr42/openMPI-OCI/main/helloworld.c
+wget https://raw.githubusercontent.com/badr42/openMPI-OCI/main/nqueens.c
+wget https://raw.githubusercontent.com/badr42/openMPI-OCI/main/mpi_prime.c
+
+
 export PATH=”$PATH:/home/ubuntu/.openmpi/bin”
 export LD_LIBRARY_PATH=”$LD_LIBRARY_PATH:/home/ubuntu/.openmpi/lib”
 
