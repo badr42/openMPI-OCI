@@ -2,7 +2,6 @@ variable "compartment_ocid" {
   description = ""
 }
 
-
 variable "instance_name" {
   description = ""
 }
@@ -24,5 +23,9 @@ variable "subnet_cidr" {
 }
 
 variable "vcn_cidr" {
+  description = ""
+}
+
+variable "core_count" {
   description = ""
 }
