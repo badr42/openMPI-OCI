@@ -6,6 +6,7 @@ data "oci_core_images" "images" {
  
 }
 
+
 # Create a compute instance with a public IP address using oci provider
 resource "oci_core_instance" "instance" {
   availability_domain = data.oci_identity_availability_domains.ADs.availability_domains[var.AD_number].name
