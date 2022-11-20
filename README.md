@@ -91,3 +91,18 @@ PRIME_MPI
 PRIME_MPI - Master process:
   Normal end of execution.
 ```
+
+
+## Terminating the environment
+When are done please run
+
+```
+terraform destroy
+
+```
+
+
+## Building a cluster
+
+To build a cluster you can repeat this several times to build several nodes and then connect them together as shown here
+https://feyziyev007.medium.com/how-to-install-openmpi-on-ubuntu-18-04-cluster-2fb3f03bdf61
